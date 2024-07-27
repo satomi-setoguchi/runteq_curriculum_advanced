@@ -91,3 +91,13 @@ crumb :edit_admin_article do |article|
   link '記事編集', edit_admin_article_path(article.uuid)
   parent :admin_articles
 end
+
+crumb :admin_tags do
+  link 'タグ一覧', admin_tags_path
+  parent :admin_dashboard
+end
+
+crumb :edit_admin_tags do |tag|
+  link 'タグ編集', admin_tags_path(tag)
+  parent :admin_tags
+end
