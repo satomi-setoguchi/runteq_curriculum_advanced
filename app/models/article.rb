@@ -90,19 +90,26 @@ class Article < ApplicationRecord
   def prev_article
     @prev_article ||= Article.viewable.order(published_at: :desc).find_by('published_at < ?', published_at)
   end
- 
+
   def publishable?
     Time.current >= published_at
   end
-  
+
   def adjust_state
     return if draft?
 
     self.state = if publishable?
-                    :published
-                  else
-                    :publish_wait
-                  end
+                   :published
+                 else
+                   :publish_wait
+                 end
   end
-    
+
+  def message_on_published
+    if published?
+      '記事を公開しました'
+    elsif publish_wait?
+      '記事を公開待ちにしました'
+    end
+  end
 end
