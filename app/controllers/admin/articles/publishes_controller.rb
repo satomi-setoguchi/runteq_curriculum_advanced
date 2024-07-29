@@ -4,7 +4,6 @@ class Admin::Articles::PublishesController < ApplicationController
   before_action :set_article
 
   def update
-
     @article.published_at = Time.current unless @article.published_at?
     @article.state = @article.publishable? ? :published : :publish_wait
 
