@@ -76,6 +76,9 @@ group :development do
   gem 'web-console'
 end
 
+#search
+gem 'ransack'
+
 group :development, :test do
 
   # Email
