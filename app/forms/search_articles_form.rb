@@ -8,8 +8,6 @@ class SearchArticlesForm
   attribute :body, :string
   attribute :tag_id, :integer
 
-
-
   def search
     relation = Article.distinct
 
