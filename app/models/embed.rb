@@ -22,6 +22,6 @@ class Embed < ApplicationRecord
   end
 
   def split_id_from_x_url
-    identifier.split('/',4).last if x?
-  end  
+    identifier.split('/', 4).last if x?
+  end
 end
