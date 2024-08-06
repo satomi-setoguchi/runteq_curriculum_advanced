@@ -22,6 +22,7 @@ class Admin::SitesController < ApplicationController
     image.purge
     redirect_to edit_admin_site_path
   end
+
   private
 
   def site_params
