@@ -20,5 +20,7 @@ end
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
-
+every 1.day, at: '9:00 am' do
+  rake 'article_mailer:report_summary'
+end
 # Learn more: http://github.com/javan/whenever
